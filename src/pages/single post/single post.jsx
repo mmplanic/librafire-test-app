@@ -18,6 +18,7 @@ export default function SinglePost({ history, match }) {
             getSinglePost(id).then(res => res.json()).then(data => {
                 if (isSubscribed) {
                     setPost(data.data.post);
+                    console.log(data.data.post);
                 }
             })
 

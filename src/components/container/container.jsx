@@ -1,5 +1,5 @@
 import React from 'react'
-import { getClassName } from '../../utils';
+import { getClassName } from '../../utils/utils';
 
 export default function Container({children, className}) {
     return (
