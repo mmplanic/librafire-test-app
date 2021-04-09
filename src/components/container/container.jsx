@@ -1,4 +1,4 @@
-import React from 'react'
+import './container.scss'
 import { getClassName } from '../../utils/utils';
 
 export default function Container({children, className}) {
