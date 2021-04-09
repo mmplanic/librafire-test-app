@@ -8,14 +8,14 @@ function FilterBar({ children }) {
     )
 }
 
-function Search({placeholder='', value='' on}) {
+function Search({placeholder='', value='', onChange}) {
     return (
         <input className='filter-bar__search' type='search' placeholder={placeholder} value={value} onChange={ onChange } />
 
     )
 }
 
-function Select({placeholder='', value='', options = []}, onChange) {
+function Select({ placeholder = '', value = '', options = [], onChange }) {
     return (
         <select className='filter-bar__select' placeholder={placeholder} value={value} onChange={ onChange } >
             {options.map((option, i) => {
