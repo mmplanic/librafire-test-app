@@ -1,6 +1,11 @@
+import { useEffect, useState } from 'react';
+import { getSinglePost } from '../../services/api';
 import './single post.scss';
 
-export default function SinglePost({history, match}) {
+
+let isSubscribed = false;
+export default function SinglePost({ history, match }) {
+    const [post, setPost] = useState({});
     let { id } = match.params;
     
     id = Number(id);
@@ -8,10 +13,23 @@ export default function SinglePost({history, match}) {
         history.push("/posts");
     }
 
+    useEffect(() => {
+        isSubscribed = true;
+            getSinglePost(id).then(res => res.json()).then(data => {
+                if (isSubscribed) {
+                    setPost(data.data.post);
+                }
+            })
+
+        return () => {
+            isSubscribed = false;
+        }
+    }, []);
+
 
     return (
         <div className='single-post-page'>
-            Single Post Page id: {id}
+            Single Post Page id: {post.id}
         </div>
     );
 }

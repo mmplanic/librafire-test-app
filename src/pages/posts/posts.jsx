@@ -1,15 +1,26 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { getAllPosts } from '../../services/api';
 import './posts.scss';
 
-export default function Posts() {
+let isSubscribed
 
+export default function Posts() {
+    const [posts, setPosts] = useState([]);
     useEffect(() => {
-        //effect
+        isSubscribed = true;
+            getAllPosts().then(res => res.json()).then(data => {
+                if (isSubscribed) {
+                    setPosts(data.data.posts);
+                    console.log(data.data);
+                }
+            })
+
         return () => {
-            //cleanup
+            isSubscribed = false;
         }
-    }, [])
-    
+    }, []);
+
+  
     return (
         <div className='posts-page' >
             Posts Page
