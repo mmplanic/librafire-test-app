@@ -8,12 +8,12 @@ export default function Posts() {
     const [posts, setPosts] = useState([]);
     useEffect(() => {
         isSubscribed = true;
-            getAllPosts().then(res => res.json()).then(data => {
-                if (isSubscribed) {
-                    setPosts(data.data.posts);
-                    console.log(data.data);
-                }
-            })
+            // getAllPosts().then(res => res.json()).then(data => {
+            //     if (isSubscribed) {
+            //         setPosts(data.data.posts);
+            //         console.log(data.data);
+            //     }
+            // })
 
         return () => {
             isSubscribed = false;
