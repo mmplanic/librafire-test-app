@@ -1,15 +1,66 @@
-.post-card{
+@import '../../sass/base.scss';
 
+.post-card{
+    display: block;
+    border-radius: 10px;
+    padding: 20px;
+    -moz-box-shadow: 0 0 10px $color-shadow;
+    -webkit-box-shadow: 0 0 10px $color-shadow;
+    box-shadow: 0 0 10px $color-shadow;
 }
 
 .post-card__title{
+    color: $color-black;
+    font-family: $font-primary;
+    font-size: $font-size--md;
 
+    line-height: $font-size--md * 1.2;
+    height: 2 * $font-size--md*1.2;
+    max-height: 2 * $font-size--md*1.2;
+
+    font-weight: $font-weight--semi-bold;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 15px;
 }
 
 .post-card__text{
+    color: $color-shade--dark;
+    font-family: $font-secondary;
+
+    font-size: $font-size--sm;
+    line-height:$font-size--sm* 1.2;
+    height: 4 * $font-size--sm * 1.2;
+    max-height: 4 * $font-size--sm * 1.2;
+
+    font-weight: $font-weight--regular;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 15px;
 
 }
 
 .post-card__link{
+    display: block;
+    text-decoration: none;
+    color: black;
+    height: 40px;
+    line-height: 40px;
 
+    font-family: $font-primary;
+    font-size: $font-size--sm;
+    font-weight: $font-weight--regular;
+    
+    @include breakpoint("large") {
+        height:auto;
+        line-height: normal;
+    }
 }

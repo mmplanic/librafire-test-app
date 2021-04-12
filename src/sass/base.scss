@@ -1,12 +1,19 @@
 
 //COLORS
 
-// $color-white: #ffffff;
-// $color-black: #000001;
-// $color-red: #be2020;
-// $color-shade--light: #676767;
-// $color-shade--dark: #333333;
+$color-white:#ffffff;
+$color-black:#2C2C37;
 
+$color-bg--secondary:#184979;
+$color-bg--primary: #f7f7f8;
+
+$color-active: #1298d2;
+
+$color-shade--light: #efeff2;
+$color-shade--normal:#B4B7D4; 
+$color-shade--dark: #6c6c78;
+
+$color-shadow: #566A8A14;
 
 
 
@@ -15,14 +22,59 @@
 $padding-container--small: 10px;
 $padding-container--large: 10vw;
 
-//MARGIN
-
-
 
 //FONTS
 
-// $font-primary: 'Montserrat', sans-serif;
-// $font-secondary: 'RobotoCondensed', sans-serif;
+$font-primary: 'Montserrat', sans-serif;
+$font-secondary: 'Segoe UI', sans-serif;
+
+
+//FONT SIZE
+
+$font-size--xs: 12px;
+$font-size--sm: 16px;
+$font-size--md: 18px;
+$font-size--lg: 20px;
+$font-size--xl: 30px;
+$font-size--xxl: 70px;
+ 
+//FONT WEIGHT
+
+$font-weight--regular: 400;
+$font-weight--medium: 500;
+$font-weight--semi-bold: 600;
+
+
+// import fonts
+
+
+@font-face {
+  font-family: $font-primary;
+  src: //url("../assets/fonts/Montserrat/Montserrat-Black.ttf") format('truetype'),
+  //  url("../assets/fonts/Montserrat/Montserrat-BlackItalic.ttf") format('truetype'),
+   url("../assets/fonts/Montserrat/Montserrat-Bold.ttf") format('truetype'),
+  //  url("../assets/fonts/Montserrat/Montserrat-BoldItalic.ttf") format('truetype'),
+  //  url("../assets/fonts/Montserrat/Montserrat-ExtraBold.ttf") format('truetype'),
+  //  url("../assets/fonts/Montserrat/Montserrat-ExtraBoldItalic.ttf") format('truetype'),
+   url("../assets/fonts/Montserrat/Montserrat-SemiBold.ttf") format('truetype'),
+  //  url("../assets/fonts/Montserrat/Montserrat-SemiBoldItalic.ttf") format('truetype'),
+  //  url("../assets/fonts/Montserrat/Montserrat-Italic.ttf") format('truetype'),
+  //  url("../assets/fonts/Montserrat/Montserrat-Light.ttf") format('truetype'),
+  //  url("../assets/fonts/Montserrat/Montserrat-LightItalic.ttf") format('truetype'),
+  //  url("../assets/fonts/Montserrat/Montserrat-ExtraLight.ttf") format('truetype'),
+  //  url("../assets/fonts/Montserrat/Montserrat-ExtraLightItalic.ttf") format('truetype'),
+   url("../assets/fonts/Montserrat/Montserrat-Medium.ttf") format('truetype'),
+  //  url("../assets/fonts/Montserrat/Montserrat-MediumItalic.ttf") format('truetype'),
+   url("../assets/fonts/Montserrat/Montserrat-Regular.ttf") format('truetype'),
+  //  url("../assets/fonts/Montserrat/Montserrat-Thin.ttf") format('truetype'),
+  //  url("../assets/fonts/Montserrat/Montserrat-ThinItalic.ttf") format('truetype')
+  ;
+   
+   font-family: $font-secondary;
+   src: url("../assets/fonts/Segoe\ UI/Segoe UI-Regular.ttf") format('truetype')
+   ;
+}
+
 
 
 
@@ -55,4 +107,17 @@ $breakpoints: (
     @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
         + "Available breakpoints are: #{map-keys($breakpoints)}.";
   }
+}
+
+
+//DEFAULT STYLES
+
+button, input[type=button], input[type=submit]{
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
 }

@@ -1,6 +1,48 @@
-@import './select';
-@import './search';
+@import '../../sass/base.scss';
 
 .filter-bar{
+    padding: 12px;
+    background-color: $color-bg--primary;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    @include breakpoint("large") {
+        flex-direction: row;
+        justify-content: space-between;
+        gap:5%
+    }
+}
+
+.filter-bar__input{
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    background-color: $color-shade--light;
+    color: $color-shade--normal;
     
+    font-family: $font-primary;
+    font-weight: $font-weight--regular;
+    font-size: $font-size--sm;
+    padding: (40px - $font-size--sm)/2 ;
+
+
+    @include breakpoint("large") {
+    font-size: $font-size--xs;
+    padding: (40px - $font-size--xs)/2 ;
+    }
+    &::placeholder{
+        color: $color-shade--normal;
+    }
+    
+    &.--search{
+        margin-bottom: 20px;
+        @include breakpoint("large") {
+            margin: 0px;
+        }
+    }
+    // &.--select{
+
+    // }
 }

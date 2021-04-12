@@ -1,0 +1,18 @@
+@import '../../sass/base.scss';
+.comment-card{
+    background-color: $color-shade--light;
+    padding: 20px;
+}
+
+.comment-card__title{
+    font-family: $font-primary;
+    font-weight: $font-weight--semi-bold;
+    font-size: $font-size--md;
+    margin-bottom: 20px;
+}
+
+.comment-card__text{
+    font-family: $font-primary;
+    color: $color-shade--dark;
+    font-size: $font-size--sm;
+}

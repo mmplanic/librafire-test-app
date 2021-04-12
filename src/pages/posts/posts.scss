@@ -1,3 +1,55 @@
-.posts-page{
+@import '../../sass/base.scss';
+
+// .posts-page{
     
+// }
+
+.posts-page__results{
+    padding: 10px 0px;
+    background-color: $color-bg--secondary;
+    color: white;
+    width: 100%;
+    font-family: $font-primary;
+    font-weight: $font-weight--regular;
+    font-size: $font-size--md;
+    @include breakpoint("large") {
+        height: 400px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        font-size: $font-size--xxl;
+    }
 }
+
+.posts-page__list{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 20px 0px;
+    @include breakpoint("large") {
+        display: grid;
+        box-sizing: border-box;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 20px;
+    }
+}
+
+.posts-page__list-card{
+    min-width: 25%;
+    @include breakpoint("large") {
+        &:first-child{
+            grid-column-start: 1;
+            grid-column-end: 3;
+            & h2{
+                font-size: 25px;
+                line-height: 25px;
+                height: 52px;
+                max-height: 52px;
+            }
+        }   
+    }
+}
+
+
+

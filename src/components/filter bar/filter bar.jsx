@@ -1,23 +1,25 @@
+import { getClassName } from '../../utils/utils';
 import './filter bar.scss';
 
-function FilterBar({ children }) {
+
+function FilterBar({ children, className }) {
     return (
-        <div className="filter-bar">
+        <div className={getClassName('filter-bar', className)}>
             { children }
         </div>
     )
 }
 
-function Search({placeholder='', value='', onChange}) {
+function Search({placeholder='', value='', onChange, className}) {
     return (
-        <input className='filter-bar__search' type='search' placeholder={placeholder} value={value} onChange={ onChange } />
+        <input className={getClassName('filter-bar__input --search' , className)} type='search' placeholder={placeholder} value={value} onChange={ onChange } />
 
     )
 }
 
-function Select({ placeholder = '', value = '', options = [], onChange }) {
+function Select({ placeholder = '', value = '', options = [], onChange, className }) {
     return (
-        <select className='filter-bar__select' placeholder={placeholder} value={value} onChange={ onChange } >
+        <select className={getClassName('filter-bar__input --select', className)} placeholder={placeholder} value={value} onChange={ onChange } >
             {options.map((option, i) => {
                 const { value:optValue='', text='' } = option;
                 return(

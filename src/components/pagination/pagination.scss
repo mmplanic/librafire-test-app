@@ -1,0 +1,52 @@
+@import '../../sass/base.scss';
+.pagination{
+    font-family: $font-secondary;
+    text-align: center;
+    font-size: $font-size--xl;
+    @include breakpoint("large") {
+        font-size: $font-size--sm;
+    }
+}
+
+.pagination__button{
+    color: $color-shade--dark;
+    cursor: pointer;
+    padding: 0 3px ;
+    margin-right: 5px;
+    min-width: 40px;
+    @include breakpoint("large") {
+        min-width: 0;
+        margin-right: 2px;
+    }
+
+    &:last-child{
+        margin: 0;
+    }
+    
+    &.--dots{
+        cursor: default;
+    }
+
+    &.active{
+        cursor: default;
+        color: $color-black;
+        border-bottom: 3px solid $color-active;
+    }
+}
+
+.pagination__arrow{
+    color: $color-shade--dark;
+
+    // &.--left{
+
+    // }
+
+    // &.--right{
+
+    // }
+
+    &.disabled{
+        color: $color-black;
+        cursor: default;
+    }
+}

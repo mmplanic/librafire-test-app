@@ -1,6 +1,6 @@
 @import '../../sass/base.scss';
 .container{
-    padding: 0px $padding-container--small;
+    padding: 10px $padding-container--small;
     @include breakpoint("large") {
         padding: 20px $padding-container--large;
     }
